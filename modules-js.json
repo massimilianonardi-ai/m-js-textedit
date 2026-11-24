@@ -1,0 +1,126 @@
+{
+  "modules": [
+    {
+      "name": "m",
+      "modules": [
+        {
+          "name": "text",
+          "modules": [
+            {
+              "name": "document",
+              "modules": [
+                {
+                  "file": "m/text/document/Document.js",
+                  "exports": "Document"
+                },
+                {
+                  "file": "m/text/document/Document2D.js",
+                  "exports": "Document2D"
+                },
+                {
+                  "file": "m/text/document/_DocumentStore.js"
+                },
+                {
+                  "file": "m/text/document/FlatDocument.js",
+                  "exports": "FlatDocument"
+                },
+                {
+                  "file": "m/text/document/PieceDocument.js",
+                  "exports": "PieceDocument"
+                }
+              ]
+            },
+            {
+              "name": "selection",
+              "modules": [
+                {
+                  "file": "m/text/selection/Selections.js",
+                  "exports": "Selections"
+                },
+                {
+                  "file": "m/text/selection/_ModeSelections.js"
+                },
+                {
+                  "file": "m/text/selection/LineSelections.js",
+                  "exports": "LineSelections"
+                },
+                {
+                  "file": "m/text/selection/RectangleSelections.js",
+                  "exports": "RectangleSelections"
+                },
+                {
+                  "file": "m/text/selection/FreeFormSelections.js",
+                  "exports": "FreeFormSelections"
+                },
+                {
+                  "file": "m/text/selection/helpers.js"
+                },
+                {
+                  "file": "m/text/selection/TextEditSelections.js",
+                  "exports": "TextEditSelections",
+                  "imports": {
+                    "Document": "m.text.document.Document"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "document",
+              "modules": [
+                {
+                  "file": "m/text/document/RawDocument2D.js",
+                  "exports": "RawDocument2D",
+                  "imports": {
+                    "Document": "m.text.document.Document",
+                    "Document2D": "m.text.document.Document2D",
+                    "TextEditSelections": "m.text.selection.TextEditSelections",
+                    "LineSelections": "m.text.selection.LineSelections",
+                    "RectangleSelections": "m.text.selection.RectangleSelections",
+                    "FreeFormSelections": "m.text.selection.FreeFormSelections"
+                  }
+                },
+                {
+                  "file": "m/text/document/CellDocument2D.js",
+                  "exports": "CellDocument2D",
+                  "imports": {
+                    "Document2D": "m.text.document.Document2D",
+                    "LineSelections": "m.text.selection.LineSelections",
+                    "RectangleSelections": "m.text.selection.RectangleSelections",
+                    "FreeFormSelections": "m.text.selection.FreeFormSelections"
+                  }
+                },
+                {
+                  "file": "m/text/document/FoldDocument2D.js",
+                  "exports": "FoldDocument2D",
+                  "imports": {
+                    "Document2D": "m.text.document.Document2D",
+                    "LineSelections": "m.text.selection.LineSelections",
+                    "RectangleSelections": "m.text.selection.RectangleSelections",
+                    "FreeFormSelections": "m.text.selection.FreeFormSelections"
+                  }
+                },
+                {
+                  "file": "m/text/document/AnnotationDocument2D.js",
+                  "exports": "AnnotationDocument2D",
+                  "imports": {
+                    "Document2D": "m.text.document.Document2D"
+                  }
+                },
+                {
+                  "file": "m/text/document/SubstitutionDocument2D.js",
+                  "exports": "SubstitutionDocument2D",
+                  "imports": {
+                    "Document2D": "m.text.document.Document2D",
+                    "LineSelections": "m.text.selection.LineSelections",
+                    "RectangleSelections": "m.text.selection.RectangleSelections",
+                    "FreeFormSelections": "m.text.selection.FreeFormSelections"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

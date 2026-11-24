@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "goals": {
+    "build": [
+      "compile"
+    ],
+    "test": [
+      "verify"
+    ]
+  },
+  "operations": {
+    "prepare": {
+      "action": {
+        "type": "process",
+        "command": "mkdir",
+        "args": [
+          "-p",
+          "build"
+        ]
+      }
+    },
+    "compile": {
+      "prerequisites": [
+        "prepare"
+      ],
+      "inputs": {
+        "descriptor": {
+          "path": "modules-js.json"
+        },
+        "sources": {
+          "path": "m"
+        }
+      },
+      "outputs": {
+        "bundle": {
+          "path": "build/textedit.js"
+        }
+      },
+      "incremental": {},
+      "action": {
+        "type": "process",
+        "command": "jsc",
+        "args": [
+          "modules-js.json",
+          "build/textedit.js"
+        ]
+      }
+    },
+    "verify": {
+      "prerequisites": [
+        "compile"
+      ],
+      "action": {
+        "type": "process",
+        "command": "node",
+        "args": [
+          "tests/engine.cjs"
+        ]
+      }
+    }
+  }
+}
